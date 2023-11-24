@@ -1,0 +1,72 @@
+<div class="flex justify-content-center font-bold">
+  <h1>Vista general de Formulario</h1>
+</div>
+<hr>
+<br>
+
+
+
+<ng-template #divLoading>
+  <mat-grid-list cols="1">
+    <mat-grid-tile>
+      <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>
+
+
+
+
+<div class="flex justify-content-center font-bold align-content-center " *ngIf="form; else divLoading ">
+
+  <mat-card class="col-12 sm:col-6 p-2">
+    <mat-card-header>
+      <mat-card-title>Nombre y apellido</mat-card-title>
+      <mat-card-subtitle>{{form.name | titlecase}} {{form.lastName | titlecase}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-header>
+      <mat-card-title>Tipo de documento</mat-card-title>
+      <mat-card-subtitle>{{form.documentT | titlecase}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-header>
+      <mat-card-title>Número de documento</mat-card-title>
+      <mat-card-subtitle>{{form.id}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-header>
+      <mat-card-title>Género</mat-card-title>
+      <mat-card-subtitle>{{form.gender | titlecase}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-header>
+      <mat-card-title>Fecha de nacimiento</mat-card-title>
+      <mat-card-subtitle>{{form.birthdate | date:"dd MMM, yyyy" }}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+
+  <mat-card class="col-12 sm:col-6 p-2">
+    <mat-card-header>
+      <mat-card-title>Edad</mat-card-title>
+      <mat-card-subtitle>{{form.age}} años</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-header>
+      <mat-card-title>Ciudad de residencia</mat-card-title>
+      <mat-card-subtitle>{{form.city | titlecase}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-header>
+      <mat-card-title>Barrio</mat-card-title>
+      <mat-card-subtitle>{{form.neighborhood| titlecase}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-header>
+      <mat-card-title>Dirección</mat-card-title>
+      <mat-card-subtitle>{{form.address | titlecase}}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>
+
+<div class="flex justify-content-center m-4">
+  <button mat-flat-button color="primary" routerLink="/list">
+    <mat-icon>arrow_back</mat-icon>
+    Volver
+  </button>
+</div>
+

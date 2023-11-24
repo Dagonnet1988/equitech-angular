@@ -1,0 +1,92 @@
+<div class="m-4">
+  <h1 ml-5>Detalle / Crear formulario</h1>
+
+  <mat-divider class="mb-2"></mat-divider>
+
+  <div class="grid">
+
+    <div class="col12 sm:6">
+      <mat-card>
+        <mat-card-content>
+
+          <form class="grid" [formGroup]="newForm" (ngSubmit)="onSubmit()">
+            <mat-form-field class="col-12 sm:col-6">
+              <mat-label>Nombre</mat-label>
+              <input matInput type="text" required formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field class="col-12 sm:col-6">
+              <mat-label>Apellido</mat-label>
+              <input matInput type="text" required formControlName="lastName">
+            </mat-form-field>
+
+            <mat-form-field class="col-12 sm:col-6">
+              <mat-label>Tipo de documento</mat-label>
+              <mat-select required formControlName="documentT">
+                <mat-option *ngFor="let document of tDocument"
+                [value]="document.id">
+                {{ document.desc}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="col-12 sm:col-6">
+              <mat-label>Número de documento</mat-label>
+              <input matInput type="number" required formControlName="id">
+            </mat-form-field>
+
+            <mat-form-field class="col-12 sm:col-6">
+              <mat-label>Género</mat-label>
+              <input matInput type="text" formControlName="gender">
+            </mat-form-field>
+
+            <mat-form-field class="col-12 sm:col-6">
+              <mat-label>Fecha de nacimiento</mat-label>
+              <input matInput type="date" required formControlName="birthdate">
+            </mat-form-field>
+
+            <mat-form-field class="col-12 sm:col-6">
+              <mat-label>Edad</mat-label>
+              <input matInput type="number" required formControlName="age">
+            </mat-form-field>
+
+            <mat-form-field class="col-12 sm:col-6">
+              <mat-label>Ciudad de residencia</mat-label>
+              <input matInput type="text" required formControlName="city">
+            </mat-form-field>
+
+            <mat-form-field class="col-12 sm:col-6">
+              <mat-label>Dirección</mat-label>
+              <input matInput type="text" required formControlName="address">
+            </mat-form-field>
+
+            <mat-form-field class="col-12 sm:col-6">
+              <mat-label>Barrio</mat-label>
+              <input matInput type="text"  formControlName="neighborhood">
+            </mat-form-field>
+
+          </form>
+
+          <button mat-flat-button color="primary" class="mr-5" (click)="onSubmit()">
+            <mat-icon>save</mat-icon>
+            Guardar
+          </button>
+          <span class="spacer"></span>
+
+          <button mat-flat-button color="primary" routerLink="/home">
+            <mat-icon>arrow_back</mat-icon>
+            Volver
+          </button>
+
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+
+    <div class="col12 sm:6">
+
+    </div>
+
+  </div>
+
+
